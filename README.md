@@ -66,7 +66,7 @@
         
     3. Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2.
         1. Pertama-tama, saya membuka berkas urls.py dalam direktori 'main'. Di dalamnya, saya melakukan impor fungsi-fungsi yang telah saya buat sebelumnya di views.py. Kemudian, saya menambahkan beberapa path URL ke dalam urlpatterns. Inilah setiap path URL yang saya tambahkan:
-            * path('create-product', create_product, name='create_product'),
+            * path('create-item', create_item, name='create_item'),
             * path('xml/', show_xml, name='show_xml'),
             * path('json/', show_json, name='show_json'),
             * path('xml/&lt;int:id>/', show_xml_by_id, name='show_xml_by_id'),
