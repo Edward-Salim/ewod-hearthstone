@@ -1,45 +1,55 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{{ nama_aplikasi }}</h1>
-
-    <h5>Name:</h5>
-    <p>{{nama}}</p>
-
-    <h5>Class:</h5>
-    <p>{{kelas}}</p>
-
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Amount</th>
-            <th>Description</th>
-        </tr>
-
-        {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-
-        {% for item in items %}
-            <tr>
-                <td>{{item.name}}</td>
-                <td>{{item.amount}}</td>
-                <td>{{item.description}}</td>
-            </tr>
-        {% endfor %}
-    </table>
-
-    <h5>Sesi terakhir login: {{ last_login }}</h5>
-
-    <br />
-
-    <a href="{% url 'main:create_item' %}">
-        <button>
-            Add New Item
-        </button>
+<nav class="navbar navbar-light bg-light justify-content-between p-2">
+    <a class="navbar-brand">
+        <h5>{{ nama_aplikasi }}</h5>
     </a>
     <a href="{% url 'main:logout' %}">
-        <button>
+        <button class="btn btn-danger" my-2 my-sm-0>
             Logout
         </button>
     </a>
+</nav>
 
+<div class="m-2 text-white d-flex flex-column align-items-center justify-content-center">
+    <h2 class="mb-4 text-center"> Welcome Back, {{nama}} from {{kelas}}!</h2>
+
+    <table class=" table table-striped table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.amount }}</td>
+                <td>{{ item.description }}</td>
+                <td>
+                    <a href="{% url 'main:edit_item' item.pk %}" class="btn btn-primary btn-sm">
+                        Edit
+                    </a>
+                    <a href="{% url 'main:delete_item' item.pk %}" class="btn btn-danger btn-sm">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h6 class="text-center">Sesi terakhir login: {{ last_login }}</h6>
+    <br />
+
+    <a href="{% url 'main:create_item' %}">
+        <button class="btn btn-success">
+            Add New Item
+        </button>
+    </a>
+</div>
 {% endblock content %}
