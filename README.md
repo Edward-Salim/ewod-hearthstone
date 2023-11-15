@@ -1,5 +1,5 @@
 **<h1>README Tugas 6</h1>**
-**<h2>Link: <a href="http://edward-salim-tugas.pbp.cs.ui.ac.id/">http://edward-salim-tugas.pbp.cs.ui.ac.id/</a></h2>**
+**<h2>Link (Redeploy): <a href="http://edward-salim-tugas.pbp.cs.ui.ac.id/">http://edward-salim-tugas.pbp.cs.ui.ac.id/</a></h2>**
 <br>
 **1. Jelaskan perbedaan antara _asynchronous programming_ dengan _synchronous programming_.**
 
